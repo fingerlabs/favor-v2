@@ -100,7 +100,7 @@ abstract contract KIP7Pausable is KIP7, AccessControlEnumerable, Pausable, IKIP7
      * Emits a {RoleRevoked} event
      */
     function renouncePauser() public override {
-        renounceRole(PAUSER_ROLE, msg.sender);
+        renounceRole(PAUSER_ROLE, _msgSender());
     }
 
     /**

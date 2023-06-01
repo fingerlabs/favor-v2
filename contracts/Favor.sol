@@ -14,7 +14,7 @@ contract Favor is KIP7Pausable, Ownable {
   ) KIP7(name, symbol) Ownable() {
     _setupRole(PAUSER_ROLE, _msgSender());
     _setupRole(DEFAULT_ADMIN_ROLE, _msgSender());
-    _mint(msg.sender, FAVOR_SUPPLY_LIMIT);
+    _mint(_msgSender(), FAVOR_SUPPLY_LIMIT);
   }
 
   function setName(string memory name) public onlyOwner {
